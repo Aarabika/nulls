@@ -82,7 +82,7 @@ func (ns *UInt32) UnmarshalText(text []byte) error {
 
 func (ns UInt32) MarshalXML(e *xml.Encoder, start xml.StartElement) error {
 	if ns.Valid {
-		return e.EncodeElement(ns.UInt32a, start)
+		return e.EncodeElement(ns.UInt32, start)
 	}
 	return nil
 }
