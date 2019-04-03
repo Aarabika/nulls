@@ -4,8 +4,8 @@ import (
 	"database/sql"
 	"database/sql/driver"
 	"encoding/json"
-	"strconv"
 	"encoding/xml"
+	"strconv"
 )
 
 // Int adds an implementation for int
@@ -108,7 +108,7 @@ func (ns *Int) UnmarshalXML(d *xml.Decoder, start xml.StartElement) error {
 func (ns Int) MarshalXMLAttr(name xml.Name) (xml.Attr, error) {
 	if ns.Valid {
 		var value string
-		value = strconv.FormatInt(int64(ns.Int), strconv.IntSize)
+		value = strconv.FormatInt(int64(ns.Int), 10)
 
 		return xml.Attr{
 			Name:  name,

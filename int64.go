@@ -4,8 +4,8 @@ import (
 	"database/sql"
 	"database/sql/driver"
 	"encoding/json"
-	"strconv"
 	"encoding/xml"
+	"strconv"
 )
 
 // Int64 replaces sql.Int64 with an implementation
@@ -113,7 +113,7 @@ func (ns *Int64) UnmarshalXML(d *xml.Decoder, start xml.StartElement) error {
 func (ns Int64) MarshalXMLAttr(name xml.Name) (xml.Attr, error) {
 	if ns.Valid {
 		var value string
-		value = strconv.FormatInt(int64(ns.Int64), 64)
+		value = strconv.FormatInt(int64(ns.Int64), 10)
 
 		return xml.Attr{
 			Name:  name,
